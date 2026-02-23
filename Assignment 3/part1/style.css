@@ -40,3 +40,11 @@ h2 {font-style: italic;
     color: darkslategray;
     font-weight: bold;
 }
+a{
+    color: green;
+}
+a:hover,
+a:focus {
+    color: darkgreen;
+    text-decoration: none;
+}
