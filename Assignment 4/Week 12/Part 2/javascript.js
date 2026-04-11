@@ -18,4 +18,11 @@ const images = [
 const baseURL =
   "https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
 
-  for (const image of images)
+  for (const image of images) {}
+
+const newImage = document.createElement("img");
+
+ newImage.src = `${baseURL}${image.filename}`;
+  newImage.alt = image.alt;
+
+  
