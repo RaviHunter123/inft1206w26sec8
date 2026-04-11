@@ -123,6 +123,20 @@ EvilCircle.prototype.setControls = function () {
     }
   };
 };
+
+EvilCircle.prototype.collisionDetect = function () {
+  for (let j = 0; j < balls.length; j++) {
+    if (balls[j].exists) {
+      const dx = this.x - balls[j].x;
+      const dy = this.y - balls[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + balls[j].size) {
+        balls[j].exists = false;
+      }
+    }
+  }
+};
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
