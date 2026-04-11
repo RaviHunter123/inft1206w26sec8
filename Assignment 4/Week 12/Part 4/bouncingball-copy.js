@@ -149,13 +149,32 @@ function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
+
   for (const ball of balls) {
     ball.draw();
     ball.update();
     ball.collisionDetect();
   }
 
+   evil.draw();
+  evil.collisionDetect();
+
   requestAnimationFrame(loop);
+}
+
+while (balls.length < 25) {
+  const size = random(10, 20);
+
+  balls.push(
+    new Ball(
+      random(size, canvas.width - size),
+      random(size, canvas.height - size),
+      random(-7, 7),
+      random(-7, 7),
+      "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")",
+      size
+    )
+  );
 }
 
 loop();
