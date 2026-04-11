@@ -2,21 +2,15 @@
 // Description: Assignment 4 Part 3
 // Date: April 11 2026
 
-// setup canvas
-
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// function to generate random number
-
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-// function to generate random color
 
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
@@ -30,12 +24,31 @@ class Ball {
     this.color = color;
     this.size = size;
   }
-}
+
 class Ball {
-  // …
   draw() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
+  }
+update() {
+    if (this.x + this.size >= width) {
+      this.velX = -Math.abs(this.velX);
+    }
+
+    if (this.x - this.size <= 0) {
+      this.velX = Math.abs(this.velX);
+    }
+
+    if (this.y + this.size >= height) {
+      this.velY = -Math.abs(this.velY);
+    }
+
+    if (this.y - this.size <= 0) {
+      this.velY = Math.abs(this.velY);
+    }
+
+    this.x += this.velX;
+    this.y += this.velY;
   }
