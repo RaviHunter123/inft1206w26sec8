@@ -137,6 +137,14 @@ EvilCircle.prototype.collisionDetect = function () {
     }
   }
 };
+
+let evil = new EvilCircle(
+  canvas.width / 2,
+  canvas.height / 2
+);
+
+evil.setControls();
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
