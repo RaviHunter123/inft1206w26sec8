@@ -1,3 +1,7 @@
+// Name:Ravi Hunter
+// Description: Assignment 4 Part 3
+// Date: April 11 2026
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
