@@ -70,8 +70,8 @@ update() {
         }
       }
     }
-  }
-}
+  };
+
 const balls = [];
 
 while (balls.length < 25) {
@@ -88,6 +88,14 @@ while (balls.length < 25) {
   );
     balls.push(ball);
 }
+function EvilCircle(x, y) {
+  Shape.call(this, x, y, 20, 20, true);
+  this.color = "white";
+  this.size = 15;
+}
+
+EvilCircle.prototype = Object.create(Shape.prototype);
+EvilCircle.prototype.constructor = EvilCircle;
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
