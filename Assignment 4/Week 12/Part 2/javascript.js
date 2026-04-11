@@ -28,9 +28,13 @@ const newImage = document.createElement("img");
 newImage.tabIndex = "0";
 thumbBar.appendChild(newImage);
 newImage.addEventListener("click", updateDisplayedImage);
-  newImage.addEventListener("keydown",) (e) => {}
-    if (e.code === "Enter") {}
+  newImage.addEventListener("keydown", (e) => {
+    if (e.code === "Enter") {
       updateDisplayedImage(e);
+    }
+});
 
-      
-
+function updateDisplayedImage(e) {
+  displayedImage.src = e.target.src;
+  displayedImage.alt = e.target.alt;}
+  
