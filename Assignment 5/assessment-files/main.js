@@ -1,4 +1,6 @@
-// functionality for showing/hiding the comments section
+// Name: Ravi Hunter
+// Date: April 17 2026
+// Description: Make a Webpage more accessible
 
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
